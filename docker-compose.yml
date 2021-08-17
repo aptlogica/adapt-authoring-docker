@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  app:
+    container_name: adapt
+    image: adapt-authoring-tool
+    build: .
+    volumes:
+      - adaptdata:/adapt_authoring
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    networks:
+      - internal
+    env_file: .env
+
+  db:
+    container_name: adaptdb
+    image: mongo:3.6
+    volumes:
+      - adaptdb:/data/db
+    networks:
+      - internal
+
+volumes:
+  adaptdata:
+  adaptdb:
+
+networks:
+  internal:
