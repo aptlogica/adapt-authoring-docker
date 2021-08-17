@@ -22,13 +22,9 @@ RUN cd / \
 
 WORKDIR /adapt_authoring
 
-# 3wc: unfortunately the installer script then removes the node_modules directory
-# https://github.com/adaptlearning/adapt_authoring/blob/master/lib/installHelpers.js#L647
 RUN npm install --production
 
 EXPOSE 5000
-
-# dos2unix docker-entrypoint.sh 
 
 COPY docker-entrypoint.sh /
 
