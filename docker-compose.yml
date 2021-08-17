@@ -3,7 +3,7 @@ version: '2'
 services:
   app:
     container_name: adapt
-    image: adapt-authoring-tool
+    image: aptlogica/adapt-authoring-docker
     build: .
     volumes:
       - adaptdata:/adapt_authoring
