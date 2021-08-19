@@ -31,7 +31,7 @@ install_adapt() {
 	yes "" | node install --install Y \
    	--authoringToolRepository https://github.com/adaptlearning/adapt_authoring.git \
 		--frameworkRepository https://github.com/adaptlearning/adapt_framework.git \
-		--frameworkRevision tags/v5.15.5 \
+		--frameworkRevision tags/v5.14.0 \
 		--serverPort "${PORT}" --serverName "${DOMAIN}" \
 		--dbHost "${DB_HOST}" --dbName "${DB_NAME}" --dbPort "${DB_PORT}" \
 		--dbUser "${DB_USER}" \
