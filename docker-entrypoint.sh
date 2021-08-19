@@ -46,7 +46,7 @@ install_adapt() {
 		--masterTenantName $tenantname --masterTenantDisplayName $tenantname \
 		--suEmail "${ADMIN_EMAIL}" --suPassword "${ADMIN_PASSWORD}" \
 		--suRetypePassword "${ADMIN_PASSWORD}" \
-		--dbPass "${DB_PASSWORD}" --dbAuthSource "${DB_AUTH_SOURCE}"
+		--dbPass "${DB_PASSWORD}" --dbAuthSource "${DB_AUTH_SOURCE}" \
 		--smtpUsername "${SMTP_USERNAME}" --smtpPassword "${SMTP_PASSWORD}"
 }
 
