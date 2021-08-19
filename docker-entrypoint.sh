@@ -27,7 +27,9 @@ load_vars() {
 
 install_adapt() {
 	echo "No 'conf' dir found, running 'node install...'"
-	
+
+	tenantname=`od -x /dev/urandom | head -1 | awk '{OFS=""; print $2$3,$4,$5,$6,$7$8$9}'`
+
 	yes "" | node install --install Y \
    	--authoringToolRepository https://github.com/adaptlearning/adapt_authoring.git \
 		--frameworkRepository https://github.com/adaptlearning/adapt_framework.git \
@@ -41,7 +43,7 @@ install_adapt() {
 		--useSmtp true --smtpService "${SMTP_SERVICE}" \
 		--smtpConnectionUrl smtp://postfix_relay_app \
 		--fromAddress "${FROM_EMAIL}" \
-		--masterTenantName main --masterTenantDisplayName Main \
+		--masterTenantName $tenantname --masterTenantDisplayName $tenantname \
 		--suEmail "${ADMIN_EMAIL}" --suPassword "${ADMIN_PASSWORD}" \
 		--suRetypePassword "${ADMIN_PASSWORD}" \
 		--dbPass "${DB_PASSWORD}" --dbAuthSource "${DB_AUTH_SOURCE}"
